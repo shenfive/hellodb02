@@ -65,12 +65,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071.2" y="98.50074962518741"/>
+            <point key="canvasLocation" x="1074" y="105"/>
         </scene>
-        <!--View Controller-->
+        <!--Page2 View Controller-->
         <scene sceneID="Dhr-Ji-e9l">
             <objects>
-                <viewController id="idK-nJ-7k3" sceneMemberID="viewController">
+                <viewController id="idK-nJ-7k3" customClass="Page2ViewController" customModule="hellodb02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KOs-8S-KKG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sh-bV-cdD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2700" y="110"/>
+            <point key="canvasLocation" x="2822" y="105"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ejJ-mr-TDm">

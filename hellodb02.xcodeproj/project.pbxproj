@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		BA9EDCD223ADE7C900AB2670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA9EDCD123ADE7C900AB2670 /* Assets.xcassets */; };
 		BA9EDCD523ADE7C900AB2670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9EDCD323ADE7C900AB2670 /* LaunchScreen.storyboard */; };
 		BA9EDCDD23ADE85D00AB2670 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA9EDCDC23ADE85D00AB2670 /* GoogleService-Info.plist */; };
+		BA9EDCDF23ADF20600AB2670 /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9EDCDE23ADF20600AB2670 /* Page2ViewController.swift */; };
 		D603D89F93C57F4D371E4B63 /* Pods_hellodb02.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB0FE1A991DF02AFCE6B2A4 /* Pods_hellodb02.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		BA9EDCD423ADE7C900AB2670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA9EDCD623ADE7C900AB2670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA9EDCDC23ADE85D00AB2670 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA9EDCDE23ADF20600AB2670 /* Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
 		C7AA587662DC872390242CC4 /* Pods-hellodb02.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hellodb02.release.xcconfig"; path = "Target Support Files/Pods-hellodb02/Pods-hellodb02.release.xcconfig"; sourceTree = "<group>"; };
 		FEB0FE1A991DF02AFCE6B2A4 /* Pods_hellodb02.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hellodb02.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -58,7 +60,6 @@
 				81A8A829B506B4FE3B798569 /* Pods-hellodb02.debug.xcconfig */,
 				C7AA587662DC872390242CC4 /* Pods-hellodb02.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -91,6 +92,7 @@
 				BA9EDCD123ADE7C900AB2670 /* Assets.xcassets */,
 				BA9EDCD323ADE7C900AB2670 /* LaunchScreen.storyboard */,
 				BA9EDCD623ADE7C900AB2670 /* Info.plist */,
+				BA9EDCDE23ADF20600AB2670 /* Page2ViewController.swift */,
 			);
 			path = hellodb02;
 			sourceTree = "<group>";
@@ -213,6 +215,7 @@
 			files = (
 				BA9EDCCD23ADE7C800AB2670 /* ViewController.swift in Sources */,
 				BA9EDCC923ADE7C800AB2670 /* AppDelegate.swift in Sources */,
+				BA9EDCDF23ADF20600AB2670 /* Page2ViewController.swift in Sources */,
 				BA9EDCCB23ADE7C800AB2670 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

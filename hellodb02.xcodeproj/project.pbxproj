@@ -13,9 +13,12 @@
 		BA9EDCD023ADE7C800AB2670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9EDCCE23ADE7C800AB2670 /* Main.storyboard */; };
 		BA9EDCD223ADE7C900AB2670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA9EDCD123ADE7C900AB2670 /* Assets.xcassets */; };
 		BA9EDCD523ADE7C900AB2670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9EDCD323ADE7C900AB2670 /* LaunchScreen.storyboard */; };
+		BA9EDCDD23ADE85D00AB2670 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA9EDCDC23ADE85D00AB2670 /* GoogleService-Info.plist */; };
+		D603D89F93C57F4D371E4B63 /* Pods_hellodb02.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB0FE1A991DF02AFCE6B2A4 /* Pods_hellodb02.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81A8A829B506B4FE3B798569 /* Pods-hellodb02.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hellodb02.debug.xcconfig"; path = "Target Support Files/Pods-hellodb02/Pods-hellodb02.debug.xcconfig"; sourceTree = "<group>"; };
 		BA9EDCC523ADE7C800AB2670 /* hellodb02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hellodb02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9EDCC823ADE7C800AB2670 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA9EDCCA23ADE7C800AB2670 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,9 @@
 		BA9EDCD123ADE7C900AB2670 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA9EDCD423ADE7C900AB2670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA9EDCD623ADE7C900AB2670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA9EDCDC23ADE85D00AB2670 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C7AA587662DC872390242CC4 /* Pods-hellodb02.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hellodb02.release.xcconfig"; path = "Target Support Files/Pods-hellodb02/Pods-hellodb02.release.xcconfig"; sourceTree = "<group>"; };
+		FEB0FE1A991DF02AFCE6B2A4 /* Pods_hellodb02.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hellodb02.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D603D89F93C57F4D371E4B63 /* Pods_hellodb02.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55806BAE5C081F6090724C1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEB0FE1A991DF02AFCE6B2A4 /* Pods_hellodb02.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B9E59E91AED2AF45858F776 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81A8A829B506B4FE3B798569 /* Pods-hellodb02.debug.xcconfig */,
+				C7AA587662DC872390242CC4 /* Pods-hellodb02.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BA9EDCBC23ADE7C800AB2670 = {
 			isa = PBXGroup;
 			children = (
 				BA9EDCC723ADE7C800AB2670 /* hellodb02 */,
 				BA9EDCC623ADE7C800AB2670 /* Products */,
+				9B9E59E91AED2AF45858F776 /* Pods */,
+				55806BAE5C081F6090724C1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +86,7 @@
 				BA9EDCC823ADE7C800AB2670 /* AppDelegate.swift */,
 				BA9EDCCA23ADE7C800AB2670 /* SceneDelegate.swift */,
 				BA9EDCCC23ADE7C800AB2670 /* ViewController.swift */,
+				BA9EDCDC23ADE85D00AB2670 /* GoogleService-Info.plist */,
 				BA9EDCCE23ADE7C800AB2670 /* Main.storyboard */,
 				BA9EDCD123ADE7C900AB2670 /* Assets.xcassets */,
 				BA9EDCD323ADE7C900AB2670 /* LaunchScreen.storyboard */,
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA9EDCD923ADE7C900AB2670 /* Build configuration list for PBXNativeTarget "hellodb02" */;
 			buildPhases = (
+				2E3611A3CE6AF2D910B50D4C /* [CP] Check Pods Manifest.lock */,
 				BA9EDCC123ADE7C800AB2670 /* Sources */,
 				BA9EDCC223ADE7C800AB2670 /* Frameworks */,
 				BA9EDCC323ADE7C800AB2670 /* Resources */,
+				F0AEB6C9E54C5D53E3B1E737 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +156,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA9EDCD523ADE7C900AB2670 /* LaunchScreen.storyboard in Resources */,
+				BA9EDCDD23ADE85D00AB2670 /* GoogleService-Info.plist in Resources */,
 				BA9EDCD223ADE7C900AB2670 /* Assets.xcassets in Resources */,
 				BA9EDCD023ADE7C800AB2670 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E3611A3CE6AF2D910B50D4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hellodb02-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0AEB6C9E54C5D53E3B1E737 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hellodb02/Pods-hellodb02-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hellodb02/Pods-hellodb02-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hellodb02/Pods-hellodb02-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BA9EDCC123ADE7C800AB2670 /* Sources */ = {
@@ -282,6 +355,7 @@
 		};
 		BA9EDCDA23ADE7C900AB2670 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81A8A829B506B4FE3B798569 /* Pods-hellodb02.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +374,7 @@
 		};
 		BA9EDCDB23ADE7C900AB2670 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7AA587662DC872390242CC4 /* Pods-hellodb02.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -22,6 +22,11 @@ class Page2ViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         tableview.dataSource = self
         dbRef.child("subject").observeSingleEvent(of: .value) { (snapshot) in
             print(snapshot)
+            for item in snapshot.children{
+                if let snapshotItem = item as? DataSnapshot{
+                    print(snapshotItem)
+                }
+            }
         }
         
         

@@ -23,6 +23,7 @@ class ViewController: UIViewController {
             }
         }
     }
+    
 
     @IBAction func enterDisc(_ sender: Any) {
         if Auth.auth().currentUser == nil{
@@ -36,6 +37,7 @@ class ViewController: UIViewController {
             return
         }
         
+        performSegue(withIdentifier: "goList", sender: self)
         
         
     }

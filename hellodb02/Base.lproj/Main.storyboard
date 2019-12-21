@@ -74,17 +74,59 @@
                     <view key="view" contentMode="scaleToFill" id="KOs-8S-KKG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oHZ-lz-os6">
+                                <rect key="frame" x="0.0" y="144" width="375" height="523"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="discListCell" id="zyH-ud-YNS" customClass="DiscListTableViewCell" customModule="hellodb02" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zyH-ud-YNS" id="Pqj-Zn-KT0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gog-LJ-LQ1">
+                                                    <rect key="frame" x="20" y="10" width="335" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="HVo-3c-7jr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gog-LJ-LQ1" firstAttribute="top" secondItem="Pqj-Zn-KT0" secondAttribute="top" constant="10" id="YKj-24-Kve"/>
+                                                <constraint firstAttribute="trailing" secondItem="gog-LJ-LQ1" secondAttribute="trailing" constant="20" id="a1R-Un-pi9"/>
+                                                <constraint firstItem="gog-LJ-LQ1" firstAttribute="leading" secondItem="Pqj-Zn-KT0" secondAttribute="leading" constant="20" id="pDS-Ic-OCz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="gog-LJ-LQ1" id="fuU-vd-5Ss"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oHZ-lz-os6" firstAttribute="leading" secondItem="ad5-HS-O8y" secondAttribute="leading" id="PyL-Ra-9Qz"/>
+                            <constraint firstItem="ad5-HS-O8y" firstAttribute="bottom" secondItem="oHZ-lz-os6" secondAttribute="bottom" id="Wnm-gM-oNp"/>
+                            <constraint firstItem="ad5-HS-O8y" firstAttribute="trailing" secondItem="oHZ-lz-os6" secondAttribute="trailing" id="Z56-Ow-ysp"/>
+                            <constraint firstItem="oHZ-lz-os6" firstAttribute="top" secondItem="ad5-HS-O8y" secondAttribute="top" constant="100" id="iYS-UD-z3e"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ad5-HS-O8y"/>
                     </view>
                     <navigationItem key="navigationItem" id="mmI-uf-Oek"/>
                     <connections>
+                        <outlet property="tableview" destination="oHZ-lz-os6" id="mGw-KV-p5U"/>
                         <segue destination="Uzt-Ar-sEV" kind="show" id="zKg-NU-jNt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nQ-Qy-Wqd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="105"/>
+            <point key="canvasLocation" x="1916" y="104.7976011994003"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cal-PD-Wxh">

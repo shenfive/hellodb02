@@ -24,9 +24,12 @@ class Page2ViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             print(snapshot)
             for item in snapshot.children{
                 if let snapshotItem = item as? DataSnapshot{
-                    print(snapshotItem)
+                    var subject = snapshotItem.childSnapshot(forPath: "subject").value as! String
+                    self.forumArray.append(subject)
                 }
             }
+            print(self.forumArray)
+            self.tableview.reloadData()
         }
         
         
@@ -41,12 +44,12 @@ class Page2ViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     //MARK:tableView Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return forumArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "discListCell") as! DiscListTableViewCell
-        cell.title.text = "這是我自訂的 Cell"
+        cell.title.text = forumArray[indexPath.row]
         return cell
     }
 }

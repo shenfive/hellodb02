@@ -25,7 +25,26 @@ class ViewController: UIViewController {
     }
 
     @IBAction func enterDisc(_ sender: Any) {
+        if Auth.auth().currentUser == nil{
+            showAlert("請確認網路狀態，重新開啟")
+            return
+        }
+        
+        let theNickName = nickName.text ?? ""
+        if theNickName.count < 3 {
+            showAlert("請輸入三個字元以上的暱稱")
+            return
+        }
+        
+        
+        
     }
     
 }
-
+extension UIViewController{
+    func showAlert(_ msg:String){
+        let alert = UIAlertController(title: "注意", message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "我知道了", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+}

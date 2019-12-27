@@ -7,33 +7,17 @@
 //
 
 import UIKit
-import Firebase
 
 class Page2ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     var forumArray:[String] = []
-    var dbRef:DatabaseReference!
 
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        dbRef = Database.database().reference()
         tableview.delegate = self
         tableview.dataSource = self
-        dbRef.child("subject").observeSingleEvent(of: .value) { (snapshot) in
-            print(snapshot)
-            for item in snapshot.children{
-                if let snapshotItem = item as? DataSnapshot{
-                    var subject = snapshotItem.childSnapshot(forPath: "subject").value as! String
-                    self.forumArray.append(subject)
-                }
-            }
-            print(self.forumArray)
-            self.tableview.reloadData()
-        }
-        
-        
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,4 +36,22 @@ class Page2ViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         cell.title.text = forumArray[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goDisc", sender: nil)
+    }
+    
+    
 }
+
+//        dbRef.child("subject").observeSingleEvent(of: .value) { (snapshot) in
+//            print(snapshot)
+//            for item in snapshot.children{
+//                if let snapshotItem = item as? DataSnapshot{
+//                    var subject = snapshotItem.childSnapshot(forPath: "subject").value as! String
+//                    self.forumArray.append(subject)
+//                }
+//            }
+//            print(self.forumArray)
+//            self.tableview.reloadData()
+//        }

@@ -28,6 +28,14 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         dbREF = Database.database().reference().child("forum/disc")
         tableview.delegate = self
         tableview.dataSource = self
+        dbREF.child(key).observe(.childAdded) { (snapshot) in
+            print(snapshot.children)
+        }
+        
+        
+        
+        
+        
     }
     
     //MARK:TabelView Delegate

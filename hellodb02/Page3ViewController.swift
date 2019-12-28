@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -17,12 +18,14 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var nickName:String = ""
     var key:String = ""
     var subject:String = ""
+    var dbREF:DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(nickName)
         print(key)
         print(subject)
+        dbREF = Database.database().reference().child("forum/disc")
         tableview.delegate = self
         tableview.dataSource = self
     }
@@ -46,8 +49,11 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if msg.count < 3{
             showAlert("請輸入三個或以上字元")
         }
-        
-        
+        let content:[String:Any] =
+            ["content":msg,
+             "nickname":nickName,
+             "tiemstemp":ServerValue.timestamp()]
+        dbREF.child(key).childByAutoId().setValue(content)
     }
     
 }

@@ -141,14 +141,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="discContentTableViewCell" id="DUu-Dp-88z" customClass="DiscContentTableViewCell" customModule="hellodb02" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="21.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="21"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DUu-Dp-88z" id="0GW-DA-xfZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="21.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crd-R5-Q2M">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="21.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -179,6 +179,9 @@
                                     <constraint firstAttribute="height" constant="44" id="cJl-gM-3n3"/>
                                 </constraints>
                                 <state key="normal" title="送出"/>
+                                <connections>
+                                    <action selector="newMsg:" destination="Uzt-Ar-sEV" eventType="touchUpInside" id="MlD-Mp-BCZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -197,6 +200,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2ap-gr-Y12"/>
                     <connections>
+                        <outlet property="msgTF" destination="5Qs-uf-MCy" id="6Kg-fl-ntr"/>
                         <outlet property="tableview" destination="f0k-yx-sVq" id="WkU-sz-igE"/>
                     </connections>
                 </viewController>

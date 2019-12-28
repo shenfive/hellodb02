@@ -12,6 +12,7 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
 
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var msgTF: UITextField!
     
     var nickName:String = ""
     var key:String = ""
@@ -32,7 +33,7 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "discContentTableViewCell") as! DiscContentTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "discContentTableViewCell") as! DiscContentTableViewCell
         return cell
     }
     
@@ -40,5 +41,13 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return 44
     }
     
-
+    @IBAction func newMsg(_ sender: Any) {
+        let msg = msgTF.text ?? ""
+        if msg.count < 3{
+            showAlert("請輸入三個或以上字元")
+        }
+        
+        
+    }
+    
 }

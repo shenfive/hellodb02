@@ -26,6 +26,7 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         print(nickName)
         print(key)
         print(subject)
+        self.title = subject
         dbREF = Database.database().reference().child("forum/disc")
         tableview.delegate = self
         tableview.dataSource = self
@@ -36,6 +37,12 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 if let item = item as? DataSnapshot{
                     var theData:Disc = Disc()
                     theData.content = item.childSnapshot(forPath: "content").value as! String
+                    theData.nickname = item.childSnapshot(forPath: "nickname").value as! String
+                    print(item.childSnapshot(forPath: "tiemstemp").value as! Double)
+                    let formater:DateFormatter = DateFormatter()
+                    formater.dateFormat = "yyyy/MM/dd hh:mm"
+                    let dateString = formater.string(from: Date(timeIntervalSince1970: item.childSnapshot(forPath: "tiemstemp").value as! Double))
+                    theData.time = dateString
                     self.tableData.append(theData)
                     
                 }
@@ -51,18 +58,19 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "discContentTableViewCell") as! DiscContentTableViewCell
-        cell.content.text = tableData[indexPath.row].content
+        cell.content.text = tableData[indexPath.row].nickname + " : " + tableData[indexPath.row].content + "\n" + tableData[indexPath.row].time
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        return 74
     }
     
     @IBAction func newMsg(_ sender: Any) {
         let msg = msgTF.text ?? ""
         if msg.count < 3{
             showAlert("請輸入三個或以上字元")
+            return
         }
         let content:[String:Any] =
             ["content":msg,

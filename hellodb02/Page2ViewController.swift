@@ -12,6 +12,7 @@ import Firebase
 class Page2ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     var forumArray:[String] = []
+    var forumKeyArray:[String] = []
     var refDB:DatabaseReference!
     var nickName:String = ""
 
@@ -24,11 +25,13 @@ class Page2ViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         refDB = Database.database().reference().child("subject")
         refDB.observeSingleEvent(of: .value) { (snapshot) in
             self.forumArray.removeAll()
+            self.forumKeyArray.removeAll()
             for item in snapshot.children{
                 if let theItem = item as? DataSnapshot{
                     print(theItem.key)
                     if let subject = theItem.childSnapshot(forPath: "subject").value as? String{
                         self.forumArray.append(subject)
+                        self.forumKeyArray.append(theItem.key)
                     }
                 }
             }
@@ -41,6 +44,8 @@ class Page2ViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         case "goDisc":
             let nextVC = segue.destination as! Page3ViewController
             nextVC.nickName = self.nickName
+            nextVC.subject =  forumArray[tableview.indexPathForSelectedRow!.row]
+            nextVC.key = forumKeyArray[tableview.indexPathForSelectedRow!.row]
         default:
             break
         }

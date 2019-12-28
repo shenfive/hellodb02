@@ -41,7 +41,8 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     print(item.childSnapshot(forPath: "tiemstemp").value as! Double)
                     let formater:DateFormatter = DateFormatter()
                     formater.dateFormat = "yyyy/MM/dd hh:mm"
-                    let dateString = formater.string(from: Date(timeIntervalSince1970: item.childSnapshot(forPath: "tiemstemp").value as! Double))
+                    let time = (item.childSnapshot(forPath: "tiemstemp").value as! Double) / 1000
+                    let dateString = formater.string(from: Date.init(timeIntervalSince1970: time))
                     theData.time = dateString
                     self.tableData.append(theData)
                     

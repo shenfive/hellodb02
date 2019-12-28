@@ -9,7 +9,8 @@
 import UIKit
 
 class DiscContentTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var content: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -19,6 +19,7 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var key:String = ""
     var subject:String = ""
     var dbREF:DatabaseReference!
+    var tableData:[Disc] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,23 +29,28 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         dbREF = Database.database().reference().child("forum/disc")
         tableview.delegate = self
         tableview.dataSource = self
-        dbREF.child(key).observe(.childAdded) { (snapshot) in
-            print(snapshot.children)
+        dbREF.child(key).observe(.value) { (snapshot) in
+//            print(snapshot)
+            for item in snapshot.children{
+                if let item = item as? DataSnapshot{
+                    var theData:Disc = Disc()
+                    theData.content = item.childSnapshot(forPath: "content").value as! String
+                    self.tableData.append(theData)
+                    
+                }
+            }
+            self.tableview.reloadData()
         }
-        
-        
-        
-        
-        
     }
     
     //MARK:TabelView Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return tableData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "discContentTableViewCell") as! DiscContentTableViewCell
+        cell.content.text = tableData[indexPath.row].content
         return cell
     }
     
@@ -64,4 +70,10 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         dbREF.child(key).childByAutoId().setValue(content)
     }
     
+}
+
+struct Disc {
+    var content:String = ""
+    var nickname:String = ""
+    var time:String = ""
 }

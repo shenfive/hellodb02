@@ -31,6 +31,7 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableview.dataSource = self
         dbREF.child(key).observe(.value) { (snapshot) in
 //            print(snapshot)
+            self.tableData.removeAll()
             for item in snapshot.children{
                 if let item = item as? DataSnapshot{
                     var theData:Disc = Disc()

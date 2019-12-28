@@ -7,17 +7,27 @@
 //
 
 import UIKit
+import Firebase
 
 class Page2ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     var forumArray:[String] = []
+    var refDB:DatabaseReference!
 
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
         tableview.dataSource = self
-
+        refDB = Database.database().reference().child("subject")
+        refDB.observeSingleEvent(of: .value) { (snapshot) in
+            self.forumArray.removeAll()
+            for item in snapshot.children{
+                if let theItem = item as? DataSnapshot{
+                    print(theItem.key)
+                }
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

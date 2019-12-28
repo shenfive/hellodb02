@@ -13,22 +13,39 @@ class Page2ViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
     var forumArray:[String] = []
     var refDB:DatabaseReference!
+    var nickName:String = ""
 
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
         tableview.dataSource = self
+        print(nickName)
         refDB = Database.database().reference().child("subject")
         refDB.observeSingleEvent(of: .value) { (snapshot) in
             self.forumArray.removeAll()
             for item in snapshot.children{
                 if let theItem = item as? DataSnapshot{
                     print(theItem.key)
+                    if let subject = theItem.childSnapshot(forPath: "subject").value as? String{
+                        self.forumArray.append(subject)
+                    }
                 }
             }
+            self.tableview.reloadData()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "goDisc":
+            let nextVC = segue.destination as! Page3ViewController
+            nextVC.nickName = self.nickName
+        default:
+            break
+        }
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

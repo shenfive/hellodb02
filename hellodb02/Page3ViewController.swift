@@ -12,8 +12,12 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
 
     @IBOutlet weak var tableview: UITableView!
+    
+    var nickName:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(nickName)
         tableview.delegate = self
         tableview.dataSource = self
     }

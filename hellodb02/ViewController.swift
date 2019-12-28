@@ -24,6 +24,17 @@ class ViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "goList":
+            let nextVC = segue.destination as! Page2ViewController
+            nextVC.nickName = nickName.text ?? ""
+        default:
+            break
+        }
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)

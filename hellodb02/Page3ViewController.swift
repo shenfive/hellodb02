@@ -44,9 +44,13 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     let time = (item.childSnapshot(forPath: "tiemstemp").value as! Double) / 1000
                     let dateString = formater.string(from: Date.init(timeIntervalSince1970: time))
                     theData.time = dateString
+                    theData.timestemp = item.childSnapshot(forPath: "tiemstemp").value as! Double
                     self.tableData.append(theData)
                     
                 }
+            }
+            self.tableData.sort { (disc1, disc2) -> Bool in
+                return disc1.timestemp > disc2.timestemp
             }
             self.tableview.reloadData()
         }
@@ -86,4 +90,5 @@ struct Disc {
     var content:String = ""
     var nickname:String = ""
     var time:String = ""
+    var timestemp:Double = 0
 }

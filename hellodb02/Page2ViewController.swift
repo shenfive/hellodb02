@@ -15,10 +15,16 @@ class Page2ViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var forumKeyArray:[String] = []
     var refDB:DatabaseReference!
     var nickName:String = ""
+    var indicator:UIActivityIndicatorView = UIActivityIndicatorView()
 
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.frame = self.view.frame
+        indicator.isHidden = false
+        indicator.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        indicator.startAnimating()
+        self.view.addSubview(indicator)
         tableview.delegate = self
         tableview.dataSource = self
         print(nickName)
@@ -35,6 +41,8 @@ class Page2ViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                     }
                 }
             }
+            self.indicator.stopAnimating()
+            self.indicator.isHidden = true
             self.tableview.reloadData()
         }
     }

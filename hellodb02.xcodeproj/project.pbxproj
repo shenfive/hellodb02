@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA479B7A23B7462600042FDD /* 補充教材1228.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BA479B7923B7462600042FDD /* 補充教材1228.pdf */; };
 		BA9EDCC923ADE7C800AB2670 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9EDCC823ADE7C800AB2670 /* AppDelegate.swift */; };
 		BA9EDCCB23ADE7C800AB2670 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9EDCCA23ADE7C800AB2670 /* SceneDelegate.swift */; };
 		BA9EDCCD23ADE7C800AB2670 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9EDCCC23ADE7C800AB2670 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		81A8A829B506B4FE3B798569 /* Pods-hellodb02.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hellodb02.debug.xcconfig"; path = "Target Support Files/Pods-hellodb02/Pods-hellodb02.debug.xcconfig"; sourceTree = "<group>"; };
+		BA479B7923B7462600042FDD /* 補充教材1228.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "補充教材1228.pdf"; sourceTree = "<group>"; };
 		BA9EDCC523ADE7C800AB2670 /* hellodb02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hellodb02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9EDCC823ADE7C800AB2670 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA9EDCCA23ADE7C800AB2670 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				BA9EDCD323ADE7C900AB2670 /* LaunchScreen.storyboard */,
 				BA9EDCD623ADE7C900AB2670 /* Info.plist */,
 				BA9EDCDE23ADF20600AB2670 /* Page2ViewController.swift */,
+				BA479B7923B7462600042FDD /* 補充教材1228.pdf */,
 				BA9EDCE023ADF86500AB2670 /* DiscListTableViewCell.swift */,
 				BACD18F123B6C3B60091D34B /* Page3ViewController.swift */,
 				BACD18F323B6C3E30091D34B /* DiscContentTableViewCell.swift */,
@@ -169,6 +172,7 @@
 				BA9EDCD523ADE7C900AB2670 /* LaunchScreen.storyboard in Resources */,
 				BA9EDCDD23ADE85D00AB2670 /* GoogleService-Info.plist in Resources */,
 				BA9EDCD223ADE7C900AB2670 /* Assets.xcassets in Resources */,
+				BA479B7A23B7462600042FDD /* 補充教材1228.pdf in Resources */,
 				BA9EDCD023ADE7C800AB2670 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
